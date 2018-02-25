@@ -1031,7 +1031,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
 
-            elif msg.text in ["Allprotect off","Red Off"]:
+            elif msg.text in ["Allprotect off","Red off"]:
                 if wait["Protectjoin"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Kick Joined Group Off")
