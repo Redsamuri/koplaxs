@@ -6,15 +6,15 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
 cl = LINETCR.LINE()
-cl.login(token="-")
+cl.login(token="โทเคน1")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="-")
+ki.login(token="โทเคน2")
 ki.loginResult()
 
 ki2 = LINETCR.LINE()
-ki2.login(token="-")
+ki2.login(token="โทเคน3")
 ki2.loginResult()
 
 print "login success plak"
@@ -57,9 +57,8 @@ helpMessage ="""╔═════════════
 ║╠[29]Clear ban
 ║╠[30]Like
 ║╠[31]Like me
-║╠[32]Masuk
-║╠[33]Keluar
-║╠[34]Ready op
+║╠[32]เข้ามา
+║╠[33]Red byr
 ║║★And More★
 ║╚════════════
 ║𖤓≛≛≛≛≛≛≛≛≛≛≛≛≛𖤓
@@ -67,8 +66,42 @@ helpMessage ="""╔═════════════
 ║𖤓≛≛≛≛≛≛≛≛≛≛≛≛≛𖤓
 ╚═════════════"""
 
-Setgroup =""" 
-    ✰Ŕèďśámúŕi✰"""
+helpgroup =""" ╔═════════════
+║𖤓≛≛≛≛≛≛≛≛≛≛≛≛≛𖤓
+™By ✰Ŕèďśámúŕi✰
+║𖤓≛≛≛≛≛≛≛≛≛≛≛≛≛𖤓
+║╔════════════
+║╠[1]Red on/off
+║╠[2]Red1/2 open qr
+║╠[3]red say hi
+║╠[4]Cctv→Ciduk
+║╠[5]Tagall
+║╠[6]Banlist
+║╠[7]Spam on/off(จำนวน)(ข้อความ)
+║╠[8]Info group
+║╠[9]Cancel
+║╠[10]Open/Close Qr
+║╠[11]Gurl
+║╠[12]Gn
+║╠[13]Mid @
+║╠[14]Nk @
+║╠[15]Qr on/off
+║╠[16]Cancel on/off
+║╠[17]Join on/off
+║╠[18]Status/Set/Cek
+║╠[19]Protect on/off
+║╠[20]Cancel on/off
+║╠[21]Invite on/off
+║╠[21]Qr on/off
+║╠[22]Contact on/off
+║╠[23]Reade op
+║╠[24]Cancel all
+║║★And More★
+║╚════════════
+║𖤓≛≛≛≛≛≛≛≛≛≛≛≛≛𖤓
+║™By ✰Ŕèďśámúŕi✰   
+║𖤓≛≛≛≛≛≛≛≛≛≛≛≛≛𖤓
+╚═════════════"""
 KAC=[cl,ki,ki2]
 mid = cl.getProfile().mid
 kimid = ki.getProfile().mid
@@ -443,12 +476,12 @@ def bot(op):
                     cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
-            elif msg.text in ["Admin menu"]:
+            elif msg.text in ["help1"]:
               #if msg.from_ in admin:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,Setgroup)
+                    cl.sendText(msg.to,helpgroup)
                 else:
-                    cl.sendText(msg.to,Sett)
+                    cl.sendText(msg.to,helpt)
             elif ("Gn " in msg.text):
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
@@ -557,7 +590,7 @@ def bot(op):
                   cl.sendText(msg.to,"The stafflist is empty")
               else:
                   cl.sendText(msg.to,"Tunggu...")
-                  mc = "||Admin ૦Ո૯ ƿɿ૯८૯ ら૯ՆԲც૦੮||\n=====================\n"
+                  mc = "||Admin Ŕéďbøť||\n=====================\n"
                   for mi_d in admin:
                       mc += "••>" +cl.getContact(mi_d).displayName + "\n"
                   cl.sendText(msg.to,mc)
